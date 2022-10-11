@@ -10,6 +10,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+    public GameObject prefab;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -38,6 +40,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.blocksRaycasts = true;
 
         transform.localPosition = Vector3.zero;
+
+        Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(prefab, (Vector2)spawnPosition, Quaternion.identity); 
 
     }
 

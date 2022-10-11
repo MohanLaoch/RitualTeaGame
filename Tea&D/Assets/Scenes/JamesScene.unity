@@ -1898,6 +1898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 722860590}
+  prefab: {fileID: 0}
 --- !u!114 &977681550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,6 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 722860590}
+  prefab: {fileID: 0}
 --- !u!225 &1117480055
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3611,6 +3613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 722860590}
+  prefab: {fileID: 0}
 --- !u!225 &1687563637
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4300,6 +4303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 722860590}
+  prefab: {fileID: 1081009830559172087, guid: b85ed010042a31148b4f97e54119af82, type: 3}
 --- !u!225 &2136104769
 CanvasGroup:
   m_ObjectHideFlags: 0
