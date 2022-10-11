@@ -9,32 +9,36 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    private Rigidbody2D rigidbody2D;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        rigidbody2D = GetComponent<Rigidbody2D>();
+  
     }
 
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = .6f;
-        rigidbody2D.simulated = false;
         canvasGroup.blocksRaycasts = false;
+
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        transform.position = Input.mousePosition;
+        //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = 1f;
-        rigidbody2D.simulated = true;
         canvasGroup.blocksRaycasts = true;
+
+        transform.localPosition = Vector3.zero;
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -44,18 +48,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrop(PointerEventData eventData)
     {
-        
+        //If it is in x area instantiate a prefab at the mouse position
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "ItemSlot")
-        {
-            rigidbody2D.simulated = false;
-        }
-        else
-        {
-            rigidbody2D.simulated = true;
-        }
-    }
+
+
+
 }
