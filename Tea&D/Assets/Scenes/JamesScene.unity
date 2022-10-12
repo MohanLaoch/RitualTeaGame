@@ -1086,7 +1086,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9ffdb1134fb88a14385c09623be44e57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4303,7 +4303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 722860590}
-  prefab: {fileID: 1081009830559172087, guid: b85ed010042a31148b4f97e54119af82, type: 3}
+  prefab: {fileID: 4773511953543725327, guid: 625bc353118d8b648a9539bc7c392c40, type: 3}
 --- !u!225 &2136104769
 CanvasGroup:
   m_ObjectHideFlags: 0
