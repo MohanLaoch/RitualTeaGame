@@ -5,28 +5,25 @@ using UnityEngine;
 public class COINSspawn : MonoBehaviour
 {
     public GameObject Spawn;
-    public float SpawnTime;
-    public float SpawnDelay;
+    public Vector2 Spawnpoint;
     public int Increase = 0;
     public int Same = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (Increase > Same)
-        {
-            InvokeRepeating("SpawnObject", SpawnTime, SpawnDelay);
-        }
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-     
+        if (Increase > Same)
+        {
+         GetCOIN();
+        }
+
     }
 
-    public void SpawnObject()
+    void GetCOIN()
     {
-        Instantiate(Spawn, transform.position, transform.rotation);
+        Instantiate(Spawn, Spawnpoint, transform.rotation);
         Same += 1;
     }
+
 }
