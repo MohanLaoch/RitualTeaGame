@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4773511953543725327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.15, y: -1.75, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.8, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,11 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfTea: DwarfTea
-  acceptedTeaBag: 
+  acceptedTeaBag: AleTeaBag
   teaBag: 0
   acceptedMilk: 
   milk: 0
-  acceptedSugar: FireSugarCube
+  acceptedSugar: 
   sugar: 0
 --- !u!61 &4773511953543725326
 BoxCollider2D:
