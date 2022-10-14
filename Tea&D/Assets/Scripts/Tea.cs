@@ -6,6 +6,10 @@ public class Tea : MonoBehaviour
 {
     public string nameOfTea;
 
+    [Header("Tea Sprites")]
+    public Sprite[] teaStage;
+    public int teaStageNumber = 0;
+
     [Header("Tea Bag")]
     public string acceptedTeaBag;
     public bool teaBag;
@@ -18,6 +22,10 @@ public class Tea : MonoBehaviour
     public string acceptedSugar;
     public bool sugar;
 
+    private void Awake()
+    {
+        GetComponent<SpriteRenderer>().sprite = teaStage[teaStageNumber];
+    }
 
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -25,19 +33,37 @@ public class Tea : MonoBehaviour
         if (other.gameObject.tag == acceptedTeaBag)
         {
             teaBag = true;
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);   
+            
+            if (teaBag)
+            {
+                teaStageNumber++;
+                ChangeSprite();
+            }
         }
 
         if (other.gameObject.tag == acceptedMilk)
         {
             milk = true;
             Destroy(other.gameObject);
+
+            if (milk)
+            {
+                teaStageNumber++;
+                ChangeSprite();
+            }
         }
 
         if (other.gameObject.tag == acceptedSugar)
         {
             sugar = true;
             Destroy(other.gameObject);
+
+            if (sugar)
+            {
+                teaStageNumber++;
+                ChangeSprite();
+            }
         }
     }
 
@@ -48,6 +74,11 @@ public class Tea : MonoBehaviour
         {
             this.gameObject.tag = nameOfTea;
         }
+    }
+
+    void ChangeSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = teaStage[teaStageNumber];
     }
 
     /*

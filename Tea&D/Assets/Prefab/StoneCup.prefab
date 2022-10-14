@@ -113,6 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfTea: DwarfTea
+  teaStage:
+  - {fileID: 21300000, guid: 92fa73e4477a0ff40943c58cb56b73d2, type: 3}
+  - {fileID: 21300000, guid: 1f369ce72306be2489ee400a2ae771ee, type: 3}
+  - {fileID: 21300000, guid: 1e3d1a6e7968f83488987d73c4ba8d93, type: 3}
+  - {fileID: 21300000, guid: 350e93d6c99aea5459a2ca9f87859469, type: 3}
+  teaStageNumber: 0
   acceptedTeaBag: AleTeaBag
   teaBag: 0
   acceptedMilk: VodkaMilk
