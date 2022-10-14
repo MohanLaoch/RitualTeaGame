@@ -5,9 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - ItemSlot
-  - NormMilk
-  - FireSugarCube
   - DwarfTea
+  - DragonTea
+  - AdamTea
+  - AleTeaBag
+  - AncientTeaBag
+  - SmileTeaBag
+  - VodkaMilk
+  - CrimsonMilk
+  - NormalMilk
+  - HopsSugar
+  - FireSugar
+  - HeavenlySugar
   layers:
   - Default
   - TransparentFX
