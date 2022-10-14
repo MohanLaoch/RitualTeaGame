@@ -6,6 +6,8 @@ public class Tea : MonoBehaviour
 {
     public string nameOfTea;
 
+    public GameObject steam;
+
     [Header("Tea Sprites")]
     public Sprite[] teaStage;
     public int teaStageNumber = 0;
@@ -72,6 +74,7 @@ public class Tea : MonoBehaviour
     {
         if (teaBag && milk && sugar)
         {
+            steam.SetActive(true);
             this.gameObject.tag = nameOfTea;
         }
     }
