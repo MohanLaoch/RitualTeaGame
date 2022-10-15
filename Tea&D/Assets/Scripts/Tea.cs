@@ -24,6 +24,10 @@ public class Tea : MonoBehaviour
     public string acceptedSugar;
     public bool sugar;
 
+    [Header("Alchemy")]
+    public string acceptedAlchemy;
+    public bool alchemy;
+
     private void Awake()
     {
         GetComponent<SpriteRenderer>().sprite = teaStage[teaStageNumber];
@@ -67,12 +71,24 @@ public class Tea : MonoBehaviour
                 ChangeSprite();
             }
         }
+
+        if (other.gameObject.tag == acceptedAlchemy)
+        {
+            alchemy = true;
+            Destroy(other.gameObject);
+
+            if (sugar)
+            {
+                teaStageNumber++;
+                ChangeSprite();
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (teaBag && milk && sugar)
+        if (teaBag && milk && sugar && alchemy)
         {
             steam.SetActive(true);
             this.gameObject.tag = nameOfTea;

@@ -117,6 +117,7 @@ MonoBehaviour:
   steam: {fileID: 5406156226435022200}
   teaStage:
   - {fileID: 21300000, guid: ff8ceb1ddba6bf140a7cbfb8e8a6cf6b, type: 3}
+  - {fileID: 21300000, guid: 1d284a4b189208f4b978a1a4634dbb8a, type: 3}
   - {fileID: 21300000, guid: b4cd8fff613280f409e20fecbf084564, type: 3}
   - {fileID: 21300000, guid: 7016c2bfe3ac5de43a0ed313b245a2dc, type: 3}
   - {fileID: 21300000, guid: 4ac62bcd3b03f674fa8cf7fdd10e930a, type: 3}
@@ -127,6 +128,8 @@ MonoBehaviour:
   milk: 0
   acceptedSugar: HeavenlySugar
   sugar: 0
+  acceptedAlchemy: LightInABottle
+  alchemy: 0
 --- !u!61 &7368768582828294599
 BoxCollider2D:
   m_ObjectHideFlags: 0
