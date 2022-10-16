@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] Transform[] Positions;
+    [SerializeField] Vector3[] Positions;
     [SerializeField] float Speed;
     int NextPosIndex;
-    Transform NextPos;
-    public bool Canleave = false;
+    Vector3 NextPos;
+    public bool canLeave = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +24,9 @@ public class Move : MonoBehaviour
 
     void MoveGameObject()
     {
-          if (transform.position == NextPos.position)
+          if (transform.position == NextPos)
           {
-            if (Canleave == true)
+            if (canLeave == true)
             {
                 NextPosIndex++;
                 if (NextPosIndex >= Positions.Length)
@@ -38,7 +38,7 @@ public class Move : MonoBehaviour
           }
           else
           {
-                transform.position = Vector3.MoveTowards(transform.position, NextPos.position, Speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, NextPos, Speed * Time.deltaTime);
           }
     }
 }

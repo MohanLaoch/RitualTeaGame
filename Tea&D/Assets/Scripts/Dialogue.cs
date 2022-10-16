@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     public GameObject[] characterPrefabs;
     public Transform spawnLocation;
     public CharacterDialogue characterDialogue;
+    public bool isActive = false;
     
     private int index;
 
@@ -32,10 +33,12 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && isActive == false)
         {
             Instantiate(characterPrefabs[Random.Range(0, characterPrefabs.Length)], spawnLocation.position,
                 spawnLocation.rotation);
+            textComponent.text = string.Empty;
+            isActive = true;
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -50,6 +53,7 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                isActive = false;
             }
         }
 
@@ -62,9 +66,11 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue(List<String> charText)
     {
+        textComponent.text = string.Empty;
         lines = charText;
         gameObject.SetActive(true);
         index = 0;
+        StopAllCoroutines();
         StartCoroutine(TypeLine());
     }
 
@@ -89,7 +95,6 @@ public class Dialogue : MonoBehaviour
         else
         {
             isSpeaking = false;
-            gameObject.SetActive(false);
         }
     }
 

@@ -7,7 +7,9 @@ public class CollectTea : MonoBehaviour
     public COINSspawn Coin;
     public CustomerNumber ID;
     public Move move;
-
+    public GameObject dialogue;
+    public List<string> characterText = new List<string>();
+    public SpriteRenderer character;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +29,8 @@ public class CollectTea : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Coin.Increase += Random.Range(2, 6);
-                move.Canleave = true;
+                move.canLeave = true;
+                HadMyTea();
             }
         }
 
@@ -37,7 +40,8 @@ public class CollectTea : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Coin.Increase += Random.Range(2, 6);
-                move.Canleave = true;
+                move.canLeave = true;
+                HadMyTea();
             }
         }
 
@@ -47,9 +51,17 @@ public class CollectTea : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Coin.Increase += Random.Range(2, 6);
-                move.Canleave = true;
+                move.canLeave = true;
+                HadMyTea();
             }
         }
     }
 
+    void HadMyTea()
+    {
+        character.flipX = true;
+        dialogue = GameObject.FindWithTag("Text");
+        dialogue.GetComponent<Dialogue>().StartDialogue(characterText);
+    }
+    
 }

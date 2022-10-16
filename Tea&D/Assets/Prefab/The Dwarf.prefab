@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6376211104691399122}
   - component: {fileID: 7218028798706557898}
   m_Layer: 0
-  m_Name: Dragon
+  m_Name: The Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1027927007
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 1fca4afbd08314a41a473e76848ff858, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8170332ff35eab479b86b46c8aa1929, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,11 +104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 0}
   characterText:
-  - Ah, good day my friend.
-  - I am <u>Bartholomew</u>, it is nice to meet such a friendly face.
-  - My heart burns for some of your finest <u>Dragon Hustle</u>.
-  - <u>Ancient Tea</u> laced with <u>Crimson Milk</u> and <u>Fiery Sugar</u> in a
-    <u>Scale Cup</u>, please.
+  - And of course, only true dwarven eyes could spot such a gem as this proud and
+    stout tea shop.
+  - I won't bother ye too long.
+  - If I could trouble ye for some <u>Ale Tea</u> with <u>Vodka</u> and a <u>Drop
+    of Hops</u> in a <u>Stone Cup.</u>
 --- !u!114 &5408240726445775196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34de84085955118429a79390d8e114dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CustomerID: 2
+  CustomerID: 1
 --- !u!114 &3670521803169464126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   move: {fileID: 3841911891211210353}
   dialogue: {fileID: 0}
   characterText:
-  - I am most thankful, friend. May you enjoy a blessed evening.
+  - Sure only the best brew from you. I wish ye all the luck in the world.
   character: {fileID: 2237139489365328228}
 --- !u!114 &3841911891211210353
 MonoBehaviour:
@@ -156,7 +156,7 @@ MonoBehaviour:
   Positions:
   - {x: -8.25, y: 2.75, z: 0.000000042697337}
   - {x: -18, y: 2.75, z: 8.28e-43}
-  Speed: 1.5
+  Speed: 1.8
   canLeave: 0
 --- !u!61 &6376211104691399122
 BoxCollider2D:
