@@ -1,17 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public string[] lines;
+    public List<string> lines = new List<string>();
     public float textSpeed;
     public bool isSpeaking = false;
     public GameObject[] characterPrefabs;
     public Transform spawnLocation;
-
+    public CharacterDialogue characterDialogue;
+    
     private int index;
 
     public AudioClip[] SpeakingNoises = new AudioClip[0];
@@ -28,14 +31,16 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.A))
         {
             Instantiate(characterPrefabs[Random.Range(0, characterPrefabs.Length)], spawnLocation.position,
                 spawnLocation.rotation);
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
+            characterDialogue = gameObject.GetComponent<CharacterDialogue>();
             if (textComponent.text == lines[index])
             {
                 NextLine();
@@ -55,8 +60,9 @@ public class Dialogue : MonoBehaviour
         
     }
 
-    void StartDialogue()
+    public void StartDialogue(List<String> charText)
     {
+        lines = charText;
         gameObject.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
@@ -73,7 +79,7 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < lines.Count - 1)
         {
             index++;
             textComponent.text = string.Empty;
