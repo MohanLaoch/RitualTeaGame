@@ -39,6 +39,7 @@ public class Dialogue : MonoBehaviour
                 spawnLocation.rotation);
             textComponent.text = string.Empty;
             isActive = true;
+            FindObjectOfType<AudioManager>().Play("Text1");
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -47,6 +48,7 @@ public class Dialogue : MonoBehaviour
             if (textComponent.text == lines[index])
             {
                 NextLine();
+                
             }
 
             else
@@ -66,6 +68,7 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue(List<String> charText)
     {
+        
         textComponent.text = string.Empty;
         lines = charText;
         gameObject.SetActive(true);
@@ -87,6 +90,7 @@ public class Dialogue : MonoBehaviour
     {
         if (index < lines.Count - 1)
         {
+            FindObjectOfType<AudioManager>().Play("Text1");
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
