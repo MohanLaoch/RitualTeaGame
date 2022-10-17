@@ -38,7 +38,6 @@ public class Dialogue : MonoBehaviour
             Instantiate(characterPrefabs[Random.Range(0, characterPrefabs.Length)], spawnLocation.position,
                 spawnLocation.rotation);
             textComponent.text = string.Empty;
-            isActive = true;
             FindObjectOfType<AudioManager>().Play("Text1");
         }
 
@@ -55,7 +54,6 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
-                isActive = false;
             }
         }
 
@@ -71,6 +69,7 @@ public class Dialogue : MonoBehaviour
         
         textComponent.text = string.Empty;
         lines = charText;
+        isActive = !isActive;
         gameObject.SetActive(true);
         index = 0;
         StopAllCoroutines();

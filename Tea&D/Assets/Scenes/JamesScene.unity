@@ -3948,7 +3948,7 @@ MonoBehaviour:
   sounds:
   - name: BackgroundTheme
     clip: {fileID: 8300000, guid: c0bbe0a005563c145a338f37a624a50b, type: 3}
-    volume: 0.5
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
